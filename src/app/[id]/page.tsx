@@ -1,11 +1,11 @@
 import React from 'react'
 
-const page = async (props: any) => {
+interface PropsInterface { params: { id: number }, searchParams: {} }
 
+const page = async (props: PropsInterface) => {
 
     const url = await fetch(`https://jsonplaceholder.typicode.com/posts/${props.params.id}`)
     const res = await url.json()
-
 
     return (
         <div className='bg-blue-600 m-10'>
